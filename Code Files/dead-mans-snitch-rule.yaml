@@ -1,0 +1,10 @@
+---
+groups:
+- name: monitor-tasks
+  rules:
+  - alert: TaskMonitor
+    annotations:
+      message: This alert is to check whether the tasks are running correctcly.
+    expr: vector(1)
+
+

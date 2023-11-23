@@ -1,0 +1,11 @@
+---
+groups:
+- name: target-down
+  rules:
+  - alert: TargetDown
+    expr: absent(metric_name) == 1
+    for: 5m
+    annotations:
+      summary: "Target {{ $labels.instance }} is down"
+      description: "No data has been received from target {{ $labels.instance }} for 5 minutes."
+
